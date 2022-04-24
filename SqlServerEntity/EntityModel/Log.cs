@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-#nullable disable
-
-namespace DataAccessLayer.EntityModel
+﻿namespace SqlServerEntity.EntityModel
 {
-    public partial class Log
+    public class Log
     {
         public int LogId { get; set; }
         public string ThreadId { get; set; }

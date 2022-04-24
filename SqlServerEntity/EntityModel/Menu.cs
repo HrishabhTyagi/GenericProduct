@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-#nullable disable
-
-namespace DataAccessLayer.EntityModel
+﻿namespace SqlServerEntity.EntityModel
 {
-    public partial class Menu
+    public class Menu
     {
         public int MenuId { get; set; }
         public string MenuName { get; set; }

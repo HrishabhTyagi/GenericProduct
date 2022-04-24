@@ -1,23 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DataAccessLayer.EntityModel
+namespace SqlServerEntity.EntityModel
 {
-    public partial class CloudMigrationTrackerContext : DbContext
+    public class DatabaseContext : DbContext
     {
-        public CloudMigrationTrackerContext()
+        public DatabaseContext()
         {
         }
 
-        public CloudMigrationTrackerContext(DbContextOptions<CloudMigrationTrackerContext> options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
         {
         }
-
       
         public virtual DbSet<Log> Logs { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-    
-
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<MenuRoleMapping> MenuRoleMappings { get; set; }
+        public virtual DbSet<UploadedFile> UploadedFiles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<UserSessionTracking> UserSessionTrackings { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
